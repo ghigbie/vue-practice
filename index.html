@@ -14,6 +14,7 @@
                 <input type="text" v-on:input="changeInfo">
                 <h3> {{ info }}</h3>
                 <h3> {{ sayYo() }}</h3>
+                <h3> <a v-bind:href="link">Google</a></h3>
             </div>
         </div>
     </body>
@@ -23,14 +24,16 @@
             el: '#app',
             data: {
                 title: 'Yo Puppy!',
-                info: 'This puppy can change'
+                info: 'This puppy can change',
+                yo: 'Yo!!!!!',
+                link: 'http://google.com'
             },
             methods: {
                 changeInfo: function(event) {
                     this.info = event.target.value;//this accesses top vue object
                 },
                 sayYo: function(){
-                    return 'Yo!';
+                    return this.yo;
                 }
             }
         });
