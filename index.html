@@ -11,6 +11,8 @@
         <div class="container">
             <div id="app">
                 <h1>{{ title }}</h1>
+                <input type="text" v-on:input="changeInfo">
+                <h3> {{ info }}</h3>
             </div>
         </div>
     </body>
@@ -19,7 +21,13 @@
         new Vue({
             el: '#app',
             data: {
-                title: 'Yo Puppy!'
+                title: 'Yo Puppy!',
+                info: 'This puppy can change'
+            },
+            methods: {
+                changeInfo: function(event) {
+                    this.info = event.target.value;//this accesses top vue object
+                }
             }
         });
     </script>
