@@ -15,6 +15,8 @@
                 <h3> {{ info }}</h3>
                 <h3 v-once> {{ sayYo() }}</h3>
                 <h3> <a v-bind:href="link">Google</a></h3>
+                <h3 v-html='returnHTML()'></h3>
+                <h3 v-html='finishedLink'>Crypto Clarify</h3>
             </div>
         </div>
     </body>
@@ -26,7 +28,8 @@
                 title: 'Yo Puppy!',
                 info: 'This puppy can change',
                 yo: 'Yo!!!!!',
-                link: 'http://google.com'
+                link: 'http://google.com',
+                finishedLink: '<a href="http://cryptoclarify.io">Crypto Clarify</a>'
             },
             methods: {
                 changeInfo: function(event) {
@@ -34,6 +37,9 @@
                 },
                 sayYo: function(){
                     return this.yo;
+                },
+                returnHTML: function(){
+                    return this.finishedLink;
                 }
             }
         });
