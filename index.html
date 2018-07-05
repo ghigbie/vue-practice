@@ -13,7 +13,7 @@
                 <h1>{{ title }}</h1>
                 <input type="text" v-on:input="changeInfo">
                 <h3> {{ info }}</h3>
-                <h3> {{ sayYo() }}</h3>
+                <h3 v-once> {{ sayYo() }}</h3>
                 <h3> <a v-bind:href="link">Google</a></h3>
             </div>
         </div>
