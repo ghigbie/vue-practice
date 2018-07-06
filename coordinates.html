@@ -16,6 +16,9 @@
                 <h3>Move your mouse, and the cooridantes are shown below.</h3>
                 <h3> X Coordinate: {{ xCord }}</h3>
                 <h3> Y Coordinate: {{ yCord }}</h3>
+                <div>
+                    <h3 v-on:mousemove.stop="">Dead Spot</h3> <!-- stop and prevent (stopPropagation() and preventDefault()  -->
+                </div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>

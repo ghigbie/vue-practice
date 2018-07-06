@@ -13,11 +13,11 @@
                 <h1>Vue Counter</h1>
                 <h3>{{ counter }}</h3>
                 <button class="btn btn-primary" 
-                        v-on:click="increment(2)">Increment</button>
+                        v-on:click="increment(2, $event)">Increment</button> <!-- VueJS creates is own event object-->
                 <button class="btn btn-danger"
-                        v-on:click="decrement(2)">Decrement</button>
+                        v-on:click="decrement(2, $event)">Decrement</button>
                 <button class="btn btn-secondary"
-                        v-on:click="reset()">Reset</button>
+                        v-on:click="reset($event)">Reset</button>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -28,13 +28,13 @@
                     counter: 0
                 },
                 methods: {
-                    increment: function(step){
+                    increment: function(step, event){
                         this.counter += step;
                     },
-                    decrement: function(step){
+                    decrement: function(step, event){
                         this.counter -= step;
                     },
-                    reset: function(){
+                    reset: function(event){
                         this.counter = 0;
                     }
                 }
