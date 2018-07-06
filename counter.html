@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Basic Vue</title>
+        <title>Vue Counter</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
         <div class="container">
             <div id="app">
+                <h1>Vue Counter</h1>
                 <h3>{{ counter }}</h3>
                 <button class="btn btn-primary" 
                         v-on:click="increment">Increment</button>
@@ -29,6 +30,12 @@
                 methods: {
                     increment: function(){
                         this.counter = this.counter + 1;
+                    },
+                    decrement: function(){
+                        this.counter = this.counter - 1;
+                    },
+                    reset: function(){
+                        this.counter = 0;
                     }
                 }
             });
