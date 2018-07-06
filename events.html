@@ -13,6 +13,12 @@
             <div id="app">
                 <button class="btn btn-danger" 
                         v-on:click="showAlert">Show Alert</button>
+                <hr>
+                <div>
+                    <input type="text"
+                           v-on:keydown="storeData($event)">
+                    <h4>{{ displayData }}</h4>
+                <div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -20,11 +26,15 @@
             new Vue({
                 el: '#app',
                 data: {
-                    alertMessage: 'This is an alert!'
+                    alertMessage: 'This is an alert!',
+                    displayData: 'Data will be shown here!'
                 },
                 methods: {
                     showAlert: function(){
-                    alert(this.alertMessage);
+                        alert(this.alertMessage);
+                    },
+                    storeData: function(event){
+                        this.displayData = event.target.value;
                     }
                 }
             });
