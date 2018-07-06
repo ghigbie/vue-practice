@@ -16,13 +16,13 @@
                 <hr>
                 <div>
                     <input type="text"
-                           v-on:keydown="storeData($event)">
+                           v-on:keydown="displayData = $event.target.value">
                     <h4>{{ displayData }}</h4>
                 </div>
                 <hr>
                 <div>
                     <input type="text"
-                           v-on:keydown.enter="enterStoreData($event)"> <!-- Only after enter is pressed is data modify -->
+                           v-on:keydown.enter="moreDisplayData = $event.target.value"> <!-- Only after enter is pressed is data modify -->
                     <h4>{{ moreDisplayData }}</h4>
                 </div>
             </div>
@@ -39,13 +39,6 @@
                 methods: {
                     showAlert: function(){
                         alert(this.alertMessage);
-                    },
-                    storeData: function(event){
-                        this.displayData = event.target.value;
-                    },
-                    enterStoreData: function(event){
-                        this.moreDisplayData = event.target.value
-                        alert(this.moreDisplayData);
                     }
                 }
             })
