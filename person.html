@@ -9,9 +9,12 @@
 <html>
     <body>
         <div class="container">
-            <div id="app"></div>
+            <div id="app">
                 <h1>{{ title }}</h1>
                 <h3>{{ subtitle }} - {{ name }} ({{ age }})</h3>
+                <h3>{{ age * 3}}</h3>
+                <h3>{{ randomPhrase }} {{ randomNumber() }}</h3>
+                <input type='text' >
             </div>
         </div>
     </body>
@@ -23,7 +26,13 @@
                 title: 'Person Exercise in VueJS',
                 subtitle: 'Vue JS is pretty cool!',
                 name: 'Michael Jackson',
-                age: '34'
+                age: '34',
+                randomPhrase: 'Here is a random number: '
+            },
+            methods: {
+                randomNumber: function(){
+                   return  Math.floor(Math.random() * 10 ) + 1;
+                }
             }
         });
     </script>
