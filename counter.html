@@ -10,7 +10,10 @@
     <body>
         <div class="container">
             <div id="app">
-                
+                <h3>{{ counter }}</h3>
+                <button class="btn btn-primary" 
+                        v-on:click="increment">Increment</button>
+                <h3>{{ counter }}</h3>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -18,7 +21,12 @@
             new Vue({
                 el: '#app',
                 data: {
-                    
+                    counter: 0
+                },
+                methods: {
+                    increment: function(){
+                        this.counter = this.counter + 1;
+                    }
                 }
             });
         </script>
