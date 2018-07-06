@@ -11,7 +11,9 @@
         <div class="container">
             <div id="app">
                 <h1>{{ title }}</h1>
-                <input type="text" v-on:input="changeInfo">
+                <input type="text" 
+                       v-on:input="changeInfo"
+                       v-on:keyup.enter="alertMe">
                 <h3> {{ info }}</h3>
                 <h3 v-once> {{ sayYo() }}</h3>
                 <h3> <a v-bind:href="link">Google</a></h3>
@@ -40,6 +42,9 @@
                 },
                 returnHTML: function(){
                     return this.finishedLink;
+                },
+                alertMe: function(){
+                    alert('Alert!');
                 }
             }
         });
