@@ -14,7 +14,8 @@
                 <h3>{{ subtitle }} - {{ name }} ({{ age }})</h3>
                 <h3>{{ age * 3}}</h3>
                 <h3>{{ randomPhrase }} {{ randomNumber() }}</h3>
-                <input type='text' >
+                <input type='text' v-bind:value="name">
+                <img v-bind:src="imgSrc">
             </div>
         </div>
     </body>
@@ -27,7 +28,8 @@
                 subtitle: 'Vue JS is pretty cool!',
                 name: 'Michael Jackson',
                 age: '34',
-                randomPhrase: 'Here is a random number: '
+                randomPhrase: 'Here is a random number: ',
+                imgSrc: 'https://i.pinimg.com/736x/4c/51/d3/4c51d39fd2512be96265b3948769e0f5--best-popcorn-cute-dog-stuff.jpg'
             },
             methods: {
                 randomNumber: function(){
