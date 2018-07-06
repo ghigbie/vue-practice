@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Vue Counter</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="app">
+                <h1>Vue Counter</h1>
+                <h3>{{ counter }}</h3>
+                <button class="btn btn-primary" 
+                        v-on:click="increment(2, $event)">Increment</button> <!-- VueJS creates is own event object-->
+                <button class="btn btn-danger"
+                        v-on:click="decrement(2, $event)">Decrement</button>
+                <button class="btn btn-secondary"
+                        v-on:click="reset($event)">Reset</button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    counter: 0
+                },
+                methods: {
+                    increment: function(step, event){
+                        this.counter += step;
+                    },
+                    decrement: function(step, event){
+                        this.counter -= step;
+                    },
+                    reset: function(event){
+                        this.counter = 0;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
