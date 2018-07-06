@@ -19,6 +19,11 @@
                            v-on:keydown="storeData($event)">
                     <h4>{{ displayData }}</h4>
                 <div>
+                <div>
+                    <input type="text"
+                           v-on:keydown.enter="enterStoreData($event)"> <!-- Only after enter is pressed is data modify -->
+                    <h4>{{ moreDisplayData }}</h4>
+                </div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -27,7 +32,8 @@
                 el: '#app',
                 data: {
                     alertMessage: 'This is an alert!',
-                    displayData: 'Data will be shown here!'
+                    displayData: 'Data will be shown here!',
+                    moreDisplayData: 'More data will be shown here!'
                 },
                 methods: {
                     showAlert: function(){
@@ -35,9 +41,12 @@
                     },
                     storeData: function(event){
                         this.displayData = event.target.value;
+                    },
+                    enterStoreData: function(event){
+                        this.moreDisplayData = event.target.value
                     }
                 }
-            });
+            })
         </script>
     </body>
 </html>
