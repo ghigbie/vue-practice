@@ -8,9 +8,11 @@
 </head>
 <html>
     <body>
-        <div class="container" id="app"></div>
+        <div class="container" id="app">
             <ol>
-                <li v-for"todo in todos">{{todo.todo}}</li>    
+                <li v-for="item in items">
+                    {{ item.todo }}
+                </li>    
             </ol>
         </div>
     </body>
@@ -19,7 +21,7 @@
         new Vue({
            el: "#app",
            data: {
-               listItems: [
+               items: [
                    {id: 0, todo: 'Walk the dog'},
                    {id: 1, todo: 'Hunt rabbits'},
                    {id: 2, todo: 'Adopt a cat'},
