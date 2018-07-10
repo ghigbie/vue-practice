@@ -25,6 +25,12 @@
             <button class="btn btn-primary" v-on:click="increment(2, $event)">Increment</button>
             <button class="btn btn-danger" v-on:click="decrement(2, $event)">Decrement</button>
             <button class="btn btn-sucess" v-on:click="reset($event)">Reset</button>
+            <hr>
+            <h4>Count By One: {{ countByOne }}</h4>
+            <button class="btn btn-primary" v-on:click="countByOne++">Increment</button>
+            <button class="btn btn-danger" v-on:click="countByOne--">Decrement</button>
+            <button class="btn btn-sucess" v-on:click="countByOne = 0">Reset</button>
+            <hr>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -38,7 +44,8 @@
                 corgiImage: 'https://i.pinimg.com/736x/b3/9e/c6/b39ec6fa1037bf4846e973a56762a80f--welsh-corgi-puppies-corgi-pups.jpg',
                 count: 0,
                 xCoord: 0,
-                yCoord: 0
+                yCoord: 0,
+                countByOne: 0,
             },
             methods: {
                 provideRandomNumber: function(){
