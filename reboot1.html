@@ -8,7 +8,9 @@
 </head>
 <html>
     <body>
-        <div class="container" id="app">
+        <div class="container" 
+             id="app"
+             v-on:mousemove="updateCoordinates($event)">
             <h3>{{ name }}</h3>
             <p>{{ age * 3 }}</p>
             <p>{{ interest }}</p>
@@ -33,7 +35,9 @@
                 age: 34,
                 interest: 'music',
                 corgiImage: 'https://i.pinimg.com/736x/b3/9e/c6/b39ec6fa1037bf4846e973a56762a80f--welsh-corgi-puppies-corgi-pups.jpg',
-                count: 0
+                count: 0,
+                xCoord: null,
+                yCoord: null
             },
             methods: {
                 provideRandomNumber: function(){
@@ -51,6 +55,10 @@
                 },
                 reset: function(){
                     this.count = 0;
+                },
+                updateCoordinates: function(event){
+                    this.xCoord = event.clientX;
+                    this.yCoord = event.clientY;
                 }
             }
         });
