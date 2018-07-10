@@ -8,11 +8,20 @@
 </head>
 <html>
     <body>
-        <div class="container" id="#app">
+        <div class="container" id="app">
             <h3>{{ name }}</h3>
             <p>{{ age * 3 }}</p>
-            <p>{{ interest </p>
-            <h3>Here is a random number: {{ provideRandomNumber() }}</h3>
+            <p>{{ interest }}</p>
+            <h3 v-once>Here is a random number: {{ provideRandomNumber() }}</h3>
+            <button class="btn btn-default" v-on:click="alertRando">Click to Alert a Random Number</button>
+            <img v-bind:src="corgiImage">
+            <input type="text" v-bind:value='name'>
+            
+            <hr>
+            <h4>{{count}}</h4>
+            <button class="btn btn-primary" v-on:click="increment">Increment</button>
+            <button class="btn btn-danger" v-on:click="decrement">Decrement</button>
+            <button class="btn btn-sucess" v-on:click="reset">Reset</button>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -20,15 +29,30 @@
         new Vue({
             el: '#app',
             data: {
-                name: 'Michael Jackson',
+                name: 'Corgi World',
                 age: 34,
-                interest: 'music'
+                interest: 'music',
+                corgiImage: 'https://i.pinimg.com/736x/b3/9e/c6/b39ec6fa1037bf4846e973a56762a80f--welsh-corgi-puppies-corgi-pups.jpg',
+                count: 0
             },
             methods: {
                 provideRandomNumber: function(){
-                    return Math.floor(Math.random(100) * 1);
+                    return Math.floor(Math.random() * 100) +1;
+                },
+                alertRando: function(){
+                    const rando = Math.floor(Math.random()*100) +1;
+                    alert(rando);
+                },
+                increment: function(){
+                    this.count++;
+                },
+                decrement: function(){
+                    this.count > 0 ? this.count-- : null;
+                },
+                reset: function(){
+                    this.count = 0;
                 }
             }
-        })
+        });
     </script>
 </html>
