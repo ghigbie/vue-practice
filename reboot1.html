@@ -22,9 +22,9 @@
             
             <hr>
             <h4>{{count}}</h4>
-            <button class="btn btn-primary" v-on:click="increment">Increment</button>
-            <button class="btn btn-danger" v-on:click="decrement">Decrement</button>
-            <button class="btn btn-sucess" v-on:click="reset">Reset</button>
+            <button class="btn btn-primary" v-on:click="increment(2, $event)">Increment</button>
+            <button class="btn btn-danger" v-on:click="decrement(2, $event)">Decrement</button>
+            <button class="btn btn-sucess" v-on:click="reset($event)">Reset</button>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -48,13 +48,13 @@
                     const rando = Math.floor(Math.random()*100) +1;
                     alert(rando);
                 },
-                increment: function(){
-                    this.count++;
+                increment: function(step, event){
+                    this.count+=step;
                 },
-                decrement: function(){
-                    this.count > 0 ? this.count-- : null;
+                decrement: function(step, event){
+                    this.count > 0 ? this.count-=step : null;
                 },
-                reset: function(){
+                reset: function(event){
                     this.count = 0;
                 },
                 updateCoordinates: function(event){
