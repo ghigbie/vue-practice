@@ -12,6 +12,7 @@
              id="app"
              v-on:mousemove="updateCoordinates($event)">
             <h3>Coordinates of Mouse: {{xCoord}}x / {{yCoord}}y</h3>
+            <h3 v-on:mousemove.stop>Dead Spot</h3>
             <h3>{{ name }}</h3>
             <p>{{ age * 3 }}</p>
             <p>{{ interest }}</p>
@@ -31,6 +32,9 @@
             <button class="btn btn-danger" v-on:click="countByOne--">Decrement</button>
             <button class="btn btn-sucess" v-on:click="countByOne = 0">Reset</button>
             <hr>
+            <input type="text" v-on:keyup.enter="alertMe($event)" v-on:keydown="updateText = $event.target.value">
+            <h4>{{ updateText }}</h4>
+            <hr>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -46,6 +50,7 @@
                 xCoord: 0,
                 yCoord: 0,
                 countByOne: 0,
+                updateText: null,
             },
             methods: {
                 provideRandomNumber: function(){
@@ -67,6 +72,9 @@
                 updateCoordinates: function(event){
                     this.xCoord = event.clientX;
                     this.yCoord = event.clientY;
+                },
+                alertMe: function(event){
+                    alert(event.target.value);
                 }
             }
         });
