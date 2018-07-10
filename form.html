@@ -9,13 +9,26 @@
 <html>
     <body>
         <div class="container" id="app">
-            <input type="text" 
+            <input type="text" v-model="name">
+            <h4>{{ name }}</h4>
+            <input type="text" v-model="phone">
+            <h4>{{ phone }}</h4>
+            <input type="email" v-model="email">
+            <h4>{{ email }}</h4>
+            <input type="text" v-model="reason">
+            <h4>{{ reason }}</h4>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script>
         new Vue({
-            
+            el: '#app',
+            data: {
+                name: null,
+                phone: null,
+                email: null,
+                reason: null
+            }
         });
     </script>
 </html>
