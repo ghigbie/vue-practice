@@ -11,6 +11,7 @@
         <div class="container" 
              id="app"
              v-on:mousemove="updateCoordinates($event)">
+            <h3>Coordinates of Mouse: {{xCoord}}x / {{yCoord}}y</h3>
             <h3>{{ name }}</h3>
             <p>{{ age * 3 }}</p>
             <p>{{ interest }}</p>
@@ -36,8 +37,8 @@
                 interest: 'music',
                 corgiImage: 'https://i.pinimg.com/736x/b3/9e/c6/b39ec6fa1037bf4846e973a56762a80f--welsh-corgi-puppies-corgi-pups.jpg',
                 count: 0,
-                xCoord: null,
-                yCoord: null
+                xCoord: 0,
+                yCoord: 0
             },
             methods: {
                 provideRandomNumber: function(){
