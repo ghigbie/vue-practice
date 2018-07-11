@@ -10,10 +10,37 @@
     <body>
         <div class="container" id="app">
             <h1>Computed Property</h1>
+            <h4>Counter 1: {{ count }}</h4>
+            <button class="btn btn-primary" v-on:click="count++">Increase</button>
+            <button class="btn btn-danger" v-on:click="count--">Decrease</button>
+            <button class="btn btn-dark" v-on:click="count = 0">Reset</button>
+            <hr>
+            <h4>Counter 2: {{ secondCount }}</h4>
+            <button class="btn btn-primary" v-on:click="secondCount++">Increase</button>
+            <button class="btn btn-danger" v-on:click="secondCount--">Decrease</button>
+            <button class="btn btn-dark" v-on:click="secondCount = 0">Reset</button>
+            <h3>Counter 2 is greater than 5: {{ isGreater }}</h3>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script>
-
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                secondCount: 0,
+            },
+            computed: {
+                isGreater: function(){
+                    console.log('isgreater is called when needed');
+                    return this.secondCount > 5 ? 'True' : 'False';
+                }
+            },
+            methods: {
+                isRunning: function(){
+                    console.log('isRunning is called on each change');
+                }
+            }
+        });
     </script>
 </html>
