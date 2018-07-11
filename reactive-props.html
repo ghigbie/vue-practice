@@ -16,6 +16,7 @@
             <button class="btn btn-success"
                     @click="value++">Add 1</button>
             <h4>{{ result }}</h4>
+            <hr>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -26,8 +27,16 @@
                 value: 0
             },
             computed: {
-                result: function(){
+                result: function(){ //this changes result
                     return this.value >= 37 ? 'DONE! : )' : 'Not there yet : (';
+                }
+            },
+            watch: {
+                result: function(){ //this is watching result not value
+                    var vm = this; //this binds the 'this' varibale so that you get access inside of the funciton
+                    setTimeout(function(){
+                        vm.value = 0;
+                    }, 5000);
                 }
             }
         });
