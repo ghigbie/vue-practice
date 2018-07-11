@@ -11,8 +11,10 @@
         <div class="container" id="app">
             <h1>Vue Reactive Prpperties</h1>
             <h3>Current Value: {{ value }}</h3>
-            <button @click="value += 5">Add 5</button>
-            <button @click="value++">Add 1</button>
+            <button class="btn btn-primary"
+                    @click="value += 5">Add 5</button>
+            <button class="btn btn-success"
+                    @click="value++">Add 1</button>
             <h4>{{ result }}</h4>
         </div>
     </body>
