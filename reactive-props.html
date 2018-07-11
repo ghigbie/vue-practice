@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vue Reactive Properties</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<html>
+    <body>
+        <div class="container" id="app">
+            <h1>Vue Reactive Prpperties</h1>
+            <h3>Current Value: {{ value }}</h3>
+            <button @click="value += 5">Add 5</button>
+            <button @click="value++">Add 1</button>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+        });
+    </script>
+</html>
