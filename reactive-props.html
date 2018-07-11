@@ -13,6 +13,7 @@
             <h3>Current Value: {{ value }}</h3>
             <button @click="value += 5">Add 5</button>
             <button @click="value++">Add 1</button>
+            <h4>{{ result }}</h4>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -20,8 +21,13 @@
         new Vue({
             el: '#app',
             data: {
-                
+                value: 0
             },
+            computed: {
+                result: function(){
+                    return this.value >= 37 ? 'DONE! : )' : 'Not there yet : (';
+                }
+            }
         });
     </script>
 </html>
