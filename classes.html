@@ -8,19 +8,34 @@
     <style>
         .demo{
             width: 100px;
-            heigth: 100px;
+            height: 100px;
             background-color: gray;
             display: inline-block;
             margin: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
         }
     </style>
 </head>
 <html>
     <body>
         <div class="container" id="app">
-            <div class="demo"></div>
-            <div class="demo"></div>
-            <div class="demo"></div>
+            <div class="demo" 
+                 @click="attachRed = !attachRed"
+                 :class="{red: attachRed}"></div>
+            <div class="demo" 
+                 @click="attachGreen = !attachGreen"
+                 :class="{green: attachGreen}"></div>
+            <div class="demo"
+                 @click="attachBlue = !attachBlue"
+                 :class="{blue: attachBlue}"></div>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -28,7 +43,9 @@
         new Vue({
             el: '#app',
             data: {
-                
+                attachRed: false,
+                attachGreen: false,
+                attachBlue: false
             }
         });
     </script>
